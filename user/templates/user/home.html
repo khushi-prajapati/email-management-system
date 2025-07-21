@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <form method="POST" action="{% url 'email_send' %}" class="email-form">
+    {% csrf_token %}
+    <div class="container">
+        <h3><a href="/user/logout" style="float: right; color:black;">Logout</a></h3>
+    <h1>Send Email</h1>
+    <hr>
+
+    <label for="to_email"><b>To:</b></label>
+    <input type="email" placeholder="Enter Email..." name="email" id="email" required>
+
+    <label for="subject"><b>Subject:</b></label>
+    <input type="text" placeholder="Write here..." name="subject" id="subject" required>
+
+    <label for="file"><b>File:</b></label><br>
+    <input type="file" placeholder="Input your file" name="file" id="file" >
+    <br>
+
+    <label for="message"><b>Message:</b></label><br>
+    <textarea name="message" placeholder="Message..." id="message" rows="6" required></textarea>
+    <hr>
+
+    <button type="submit"class="emailbtn"><b>Send</b></button>
+    </div>
+    {% if messages %}
+  {% for message in messages %}
+    <script>alert("{{ message }}");</script>
+  {% endfor %}
+{% endif %}
+</form>
+</body>
+</html>

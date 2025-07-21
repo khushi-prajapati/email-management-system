@@ -1,0 +1,22 @@
+# Python files
+__pycache__/
+*.pyc
+
+# Django-specific
+db.sqlite3
+*.log
+
+# Environment / Secrets
+.env
+
+# IDE or system files
+*.idea/
+.DS_Store
+
+# Static & media files (optional if big)
+staticfiles/
+media/
+
+# VSCode or PyCharm
+.vscode/
+VE/
