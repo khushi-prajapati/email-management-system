@@ -6,7 +6,9 @@
 }
 
 /* Full-width input fields */
-input[type=text], input[type=email] {
+input[type=text], 
+input[type=email],
+input[type=file],textarea {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -15,7 +17,10 @@ input[type=text], input[type=email] {
   background: #f1f1f1;
 }
 
-input[type=text]:focus, input[type=email]:focus {
+input[type=text]:focus, 
+input[type=email]:focus,
+input[type=file]:focus,
+textarea:focus{
   background-color: #e6f0ff; 
   outline: none;
 }
@@ -24,6 +29,19 @@ input[type=text]:focus, input[type=email]:focus {
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
+}
+
+/* Textarea specific: vertical resize only */
+textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 4px;
+  resize: vertical; /* allows height resizing only */
+  min-height: 150px; /* ensures it's big enough */
 }
 
 /* Set a style for the submit/register button */
